@@ -1,6 +1,6 @@
 #!/bin/sh
-COMPONENTS=pretix/pretix-plugin-pretix-sumup
-DIR=pretix_sumup/locale
+COMPONENTS=pretix/pretix-plugin-pretix-flizpay
+DIR=pretix_flizpay/locale
 # Renerates .po files used for translating the plugin
 set -e
 set -x

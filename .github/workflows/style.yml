@@ -3,13 +3,13 @@ name: Code Style
 on:
   push:
     paths-ignore:
-      - 'pretix_sumup/locale/**'
-      - 'pretix_sumup/static/**'
+      - 'pretix_flizpay/locale/**'
+      - 'pretix_flizpay/static/**'
   pull_request:
     branches: [ main, master ]
     paths-ignore:
-      - 'pretix_sumup/locale/**'
-      - 'pretix_sumup/static/**'
+      - 'pretix_flizpay/locale/**'
+      - 'pretix_flizpay/static/**'
 
 jobs:
   style:

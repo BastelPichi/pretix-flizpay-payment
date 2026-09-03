@@ -1,0 +1,10 @@
+{% load i18n %}
+<meta http-equiv="refresh" content="0;url={{ redirect_url }}">
+<script type="text/javascript" nonce="{{ csp_nonce }}">
+	window.location.replace("{{ redirect_url|escapejs }}");
+</script>
+<noscript>
+	<p>
+		<a href="{{ redirect_url }}">{% trans "Continue to FLIZpay checkout" %}</a>
+	</p>
+</noscript>

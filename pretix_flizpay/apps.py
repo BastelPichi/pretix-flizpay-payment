@@ -10,13 +10,13 @@ except ImportError:
 
 class PluginApp(PluginConfig):
     default = True
-    name = "pretix_sumup"
-    verbose_name = "Pretix SumUp Payment"
+    name = "pretix_flizpay"
+    verbose_name = "Pretix FLIZpay Payment"
 
     class PretixPluginMeta:
-        name = "SumUp"
-        author = "Christoph Walcher & Botond Moksony"
-        description = gettext_lazy("Accept credit card payments via SumUp")
+        name = "FLIZpay"
+        author = "BastelPichi"
+        description = gettext_lazy("Accept payments via FLIZpay")
         visible = True
         version = __version__
         category = "PAYMENT"

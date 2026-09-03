@@ -1,5 +1,5 @@
 [plugin]
-package = "pretix-sumup-payment"
-modules = [ "pretix_sumup" ]
-marketplace_name = "sumup-payment"
+package = "pretix-flizpay-payment"
+modules = [ "pretix_flizpay" ]
+marketplace_name = "flizpay-payment"
 

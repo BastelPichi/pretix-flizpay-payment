@@ -1,7 +1,7 @@
 [project]
-name = "pretix-sumup-payment"
+name = "pretix-flizpay-payment"
 dynamic = ["version"]
-description = "Enables credit card payments via SumUp"
+description = "Enables payments via FLIZpay"
 readme = "README.rst"
 license = {text = "Apache"}
 keywords = ["pretix"]
@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [project.entry-points."pretix.plugin"]
-pretix_sumup = "pretix_sumup:PretixPluginMeta"
+pretix_flizpay = "pretix_flizpay:PretixPluginMeta"
 
 [project.entry-points."distutils.commands"]
 build = "pretix_plugin_build.build:CustomBuild"
@@ -28,14 +28,14 @@ requires = [
 ]
 
 [project.urls]
-homepage = "https://github.com/wiomoc/pretix-sumup-payment"
-repository = "https://github.com/wiomoc/pretix-sumup-payment"
+homepage = "https://github.com/wiomoc/pretix-flizpay-payment"
+repository = "https://github.com/wiomoc/pretix-flizpay-payment"
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.dynamic]
-version = {attr = "pretix_sumup.__version__"}
+version = {attr = "pretix_flizpay.__version__"}
 
 [tool.setuptools.packages.find]
 include = ["pretix*"]

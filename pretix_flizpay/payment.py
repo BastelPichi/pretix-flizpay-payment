@@ -6,6 +6,8 @@ from django import forms
 from django.http import HttpRequest
 from django.template.loader import get_template
 from django.utils.translation import gettext_lazy as _
+from i18nfield.forms import I18nFormField, I18nTextInput
+from i18nfield.strings import LazyI18nString
 from pretix.base.forms import SECRET_REDACTED, SecretKeySettingsField
 from pretix.base.models import Order, OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
@@ -19,12 +21,19 @@ logger = logging.getLogger("pretix.plugins.flizpay")
 class Flizpay(BasePaymentProvider):
     identifier = "flizpay"
     verbose_name = _("Pay with FLIZpay")
-    public_name = _("FLIZpay")
     abort_pending_allowed = True
+
+    @property
+    def public_name(self):
+        return str(self.settings.get("public_name", as_type=LazyI18nString) or _("FLIZpay"))
 
     @property
     def settings_form_fields(self):
         fields = OrderedDict([
+            ("public_name", I18nFormField(
+                label=_("Payment method name"),
+                widget=I18nTextInput,
+            )),
             ("api_key", SecretKeySettingsField(
                 label=_("API key"), required=False,
                 help_text=_("Enter the API key from your FLIZpay dashboard."),

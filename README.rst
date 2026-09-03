@@ -2,6 +2,7 @@ Pretix FLIZpay Payment
 ======================
 
 WARNING: Vibe coded and untested. Use at your own risk.
+You need to be Live to have the callback work.
 This Pretix plugin accepts payments through FLIZpay.
 
 Setup

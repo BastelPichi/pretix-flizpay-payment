@@ -109,6 +109,9 @@ class Flizpay(BasePaymentProvider):
     def checkout_confirm_render(self, request, **kwargs):
         return _("After confirmation you will be redirected to FLIZpay to complete the payment.")
 
+    def payment_form_render(self, request: HttpRequest, **kwargs):
+        return self.checkout_confirm_render(request, **kwargs)
+
     def payment_pending_render(self, request, payment):
         self._synchronize_payment_status(payment)
         if payment.state == OrderPayment.PAYMENT_STATE_CONFIRMED:

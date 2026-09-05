@@ -8,6 +8,7 @@ This Pretix plugin accepts payments through FLIZpay.
 Setup
 -----
 
+0. Install: pip install git+https://github.com/BastelPichi/pretix-flizpay-payment
 1. Enable the FLIZpay payment provider for an event.
 2. Open its settings page.
 3. Enter the FLIZpay API key.
